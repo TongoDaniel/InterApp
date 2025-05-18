@@ -12,3 +12,6 @@ def landCL_view(request):
     return render(request, 'client/landPage.html')
 def housingMore_view(request):
     return render(request, 'client/housingMore.html')
+
+def chatClient_view(request):
+    return render(request, 'client/chat.html')

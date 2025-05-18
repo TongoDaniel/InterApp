@@ -39,25 +39,29 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Header -->
-    <header class="w-full bg-white shadow-sm">
+    <header class="bg-white shadow-sm">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
-                <span class="text-xl font-semibold tracking-tight">INTER</span>
+                <span class="text-xl font-semibold">INTER</span>
             </div>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4">
                 <div class="flex items-center gap-2">
-{#                    <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">#}
-{#                        <i class="ri-user-3-line text-gray-600"></i>#}
-{#                    </div>#}
+                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                        <i class="ri-user-line text-gray-600"></i>
+                    </div>
                     <span class="font-medium">Alexander Miller</span>
                 </div>
-                <button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 !rounded-button">
-                    <i class="ri-settings-3-line text-gray-600"></i>
+                <button class="w-10 h-10 hover:bg-gray-200 rounded-full bg-gray-100 flex items-center justify-center relative">
+                    <i class="ri-message-3-line text-gray-700"></i>
+                    <span class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                </button>
+                <button class="w-10 h-10 hover:bg-gray-200 rounded-full bg-gray-100 flex items-center justify-center">
+                    <i class="ri-settings-3-line text-gray-700"></i>
                 </button>
                 <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 font-medium !rounded-button whitespace-nowrap">
-                    <i class="ri-logout-box-line"></i>
-                    <span>Déconnexion</span>
+                    <i class="ri-logout-box-r-line mr-1"></i>
+                    Déconnexion
                 </button>
             </div>
         </div>

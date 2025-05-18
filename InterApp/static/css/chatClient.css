@@ -1,0 +1,36 @@
+:where([class^="ri-"])::before {
+    content: "\f3c2";
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+}
+
+.message-list::-webkit-scrollbar, .message-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.message-list::-webkit-scrollbar-thumb, .message-area::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 3px;
+}
+
+.message-list::-webkit-scrollbar-track, .message-area::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
+}
+
+.textarea-message {
+    resize: none;
+    outline: none;
+}
+
+.textarea-message:focus {
+    border-color: #4f46e5;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

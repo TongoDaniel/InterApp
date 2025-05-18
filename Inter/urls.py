@@ -27,4 +27,5 @@ urlpatterns = [
     path('housingcl/', views.housingCL_view, name='housingCL'),
     path('landcl/', views.landCL_view, name='landCL'),
     path('housingmore/', views.housingMore_view, name='housingMore'),
+    path('chatClient/', views.chatClient_view, name='chatClient'),
 ]
