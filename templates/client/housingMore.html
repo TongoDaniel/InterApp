@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTER - Détails du logement</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config={
+            theme:{
+                extend:{
+                    colors:{
+                        primary:'#3b82f6',
+                        secondary:'#f97316'
+                    },
+                    borderRadius:{
+                        'none':'0px',
+                        'sm':'4px',
+                        DEFAULT:'8px',
+                        'md':'12px',
+                        'lg':'16px',
+                        'xl':'20px',
+                        '2xl':'24px',
+                        '3xl':'32px',
+                        'full':'9999px',
+                        'button':'8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="{% static 'css/housingMore.css' %}">
+
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
+                <span class="text-xl font-semibold tracking-tight">INTER</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+{#                    <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">#}
+{#                        <i class="ri-user-3-line text-gray-600"></i>#}
+{#                    </div>#}
+                    <span class="font-medium">Alexander Miller</span>
+                </div>
+                <button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 !rounded-button">
+                    <i class="ri-settings-3-line text-gray-600"></i>
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 font-medium !rounded-button whitespace-nowrap">
+                    <i class="ri-logout-box-line"></i>
+                    <span>Déconnexion</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pt-8 pb-24">
+        <!-- Photo Gallery -->
+        <div class="mt-6 relative">
+            <div class="rounded-lg overflow-hidden h-[480px] relative">
+                <img src="https://readdy.ai/api/search-image?query=modern%20apartment%20interior%20with%20large%20windows%2C%20natural%20light%2C%20contemporary%20furniture%2C%20minimalist%20design%2C%20spacious%20living%20room%20with%20wooden%20floors%2C%20white%20walls%2C%20elegant%20decor%2C%20high%20ceilings%2C%20open%20concept%2C%20stylish%20and%20comfortable&width=1200&height=800&seq=1&orientation=landscape"
+                     alt="Appartement moderne"
+                     class="w-full h-full object-cover object-top">
+
+                <!-- Photo Navigation Controls -->
+                <div class="absolute bottom-4 left-0 right-0 flex justify-center">
+                    <div class="flex items-center bg-black bg-opacity-30 px-3 py-1 rounded-full">
+                        <div class="photo-indicator active"></div>
+                        <div class="photo-indicator"></div>
+                        <div class="photo-indicator"></div>
+                        <div class="photo-indicator"></div>
+                        <div class="photo-indicator"></div>
+                    </div>
+                </div>
+
+                <!-- Fullscreen Button -->
+                <button class="absolute top-4 right-4 w-10 h-10 bg-black bg-opacity-40 rounded-full flex items-center justify-center text-white hover:bg-opacity-60 transition !rounded-button whitespace-nowrap">
+                    <i class="ri-fullscreen-line"></i>
+                </button>
+
+                <!-- Navigation Arrows -->
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 w-10 h-10 bg-black bg-opacity-40 rounded-full flex items-center justify-center text-white hover:bg-opacity-60 transition !rounded-button whitespace-nowrap">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 bg-black bg-opacity-40 rounded-full flex items-center justify-center text-white hover:bg-opacity-60 transition !rounded-button whitespace-nowrap">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Property Information -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Info -->
+            <div class="lg:col-span-2">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-wrap items-start justify-between">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-800">295 000 FCFA</h2>
+                            <div class="mt-2 flex items-center text-gray-600">
+                                <i class="ri-map-pin-line mr-1"></i>
+                                <span>Douala, Logbessou, A l'entrée IUC</span>
+                            </div>
+                            <div class="mt-1 text-sm text-gray-500">
+                                Publié le 8 mai 2025
+                            </div>
+                        </div>
+
+                        <div class="mt-2 lg:mt-0">
+                            <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary rounded-full text-sm font-medium">
+                                Appartement
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Property Features -->
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4 border-t border-b border-gray-100 py-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-3">
+                                <i class="ri-ruler-line text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Surface</div>
+                                <div class="font-medium">78 m²</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-3">
+                                <i class="ri-home-4-line text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Pièces</div>
+                                <div class="font-medium">3</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-3">
+                                <i class="ri-hotel-bed-line text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Chambres</div>
+                                <div class="font-medium">2</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Description</h3>
+                        <div class="text-gray-600 space-y-3">
+                            <p>
+                                Magnifique appartement de 78m² situé dans le quartier prisé de la Croix-Rousse à Lyon. Cet espace lumineux au 3ème étage d'un immeuble haussmannien offre une vue dégagée sur la ville.
+                            </p>
+                            <p>
+                                L'appartement se compose d'une entrée, d'un spacieux séjour avec parquet d'origine, d'une cuisine équipée ouverte, de deux chambres confortables, d'une salle de bain moderne et de toilettes séparées.
+                            </p>
+                            <p>
+                                Les points forts de ce bien : hauteur sous plafond de 3m, moulures d'origine, double vitrage, chauffage individuel au gaz, cave privative, et proximité immédiate des commerces, écoles et transports (métro C à 5 minutes à pied).
+                            </p>
+                            <p>
+                                Charges de copropriété : 18 000FCFA/mois incluant l'eau froide et l'entretien des parties communes.
+                                Taxe foncière : 320 250FCFA/an.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-lg shadow-sm sticky top-24">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Détails supplémentaires</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                            <span class="text-gray-600">Étage</span>
+                            <span class="font-medium">3ème</span>
+                        </div>
+
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                            <span class="text-gray-600">Ascenseur</span>
+                            <span class="font-medium">Non</span>
+                        </div>
+
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                            <span class="text-gray-600">Chauffage</span>
+                            <span class="font-medium">Individuel gaz</span>
+                        </div>
+
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                            <span class="text-gray-600">Année construction</span>
+                            <span class="font-medium">1890</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button class="w-full py-3 bg-primary text-white font-medium rounded shadow-sm hover:bg-primary/90 transition flex items-center justify-center !rounded-button whitespace-nowrap">
+                            <i class="ri-discuss-line mr-2"></i>
+                            Débuter la négociation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-4 px-4 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 mb-4 md:mb-0">© 2025 INTER Company. All rights
+                reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">Politique de confidentialité</a>
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">Conditions d'utilisation</a>
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">Politique en matière de cookies</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Photo gallery navigation
+            const indicators = document.querySelectorAll('.photo-indicator');
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    // Remove active class from all indicators
+                    indicators.forEach(ind => ind.classList.remove('active'));
+
+                    // Add active class to clicked indicator
+                    indicator.classList.add('active');
+
+                    // Here you would normally change the displayed image
+                    // For this example we're just changing the indicator
+                });
+            });
+        });
+    </script>
+</body>
+</html>

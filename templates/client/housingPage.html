@@ -1,0 +1,358 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTER - Housing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#64748B'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="{% static 'css/housingCL.css' %}">
+
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
+                <span class="text-xl font-semibold tracking-tight">INTER</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+{#                    <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">#}
+{#                        <i class="ri-user-3-line text-gray-600"></i>#}
+{#                    </div>#}
+                    <span class="font-medium">Alexander Miller</span>
+                </div>
+                <button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 !rounded-button">
+                    <i class="ri-settings-3-line text-gray-600"></i>
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 font-medium !rounded-button whitespace-nowrap">
+                    <i class="ri-logout-box-line"></i>
+                    <span>Déconnexion</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="w-full bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex space-x-1">
+                <a href="{% url 'landCL' %}" class="px-6 py-4 text-gray-600 hover:text-primary hover:bg-blue-50 font-medium">Terrains</a>
+                <a href="#" class="px-6 py-4 text-primary border-b-2 border-primary font-medium">Logements</a>
+                <a href="#" class="px-6 py-4 text-gray-600 hover:text-primary hover:bg-blue-50 font-medium">Conceptions architecturales</a>
+                <a href="#" class="px-6 py-4 text-gray-600 hover:text-primary hover:bg-blue-50 font-medium">Constructions</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-6">
+        <!-- Search and Filters -->
+        <div class="bg-white rounded-lg shadow-sm p-5 mb-6">
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1">
+                        <div class="bg-gray-50 rounded p-3">
+                            <p class="text-sm font-medium text-gray-700 mb-2">Type</p>
+                            <div class="relative">
+                                <select class="w-full appearance-none bg-white border border-gray-200 rounded py-2 pl-3 pr-8 text-sm">
+                                    <option value="">Tous types</option>
+                                    <option value="apartment">Appartement</option>
+                                    <option value="house">Maison</option>
+                                    <option value="penthouse">Penthouse</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="studio">Studio</option>
+                                </select>
+                                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-gray-50 rounded p-3">
+                            <p class="text-sm font-medium text-gray-700 mb-2">Prix</p>
+                            <div class="flex items-center gap-3">
+                                <div class="relative flex-1">
+                                    <input type="number" placeholder="Min"
+                                           class="w-full pl-8 pr-3 py-2 bg-white border border-gray-200 rounded text-sm">
+                                </div>
+                                <span class="text-gray-400">-</span>
+                                <div class="relative flex-1">
+                                    <input type="number" placeholder="Max"
+                                           class="w-full pl-8 pr-3 py-2 bg-white border border-gray-200 rounded text-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-gray-50 rounded p-3">
+                            <p class="text-sm font-medium text-gray-700 mb-2">Emplacement</p>
+                            <div class="relative">
+                                <select class="w-full appearance-none bg-white border border-gray-200 rounded py-2 pl-3 pr-8 text-sm">
+                                    <option value="">Tous les emplacements</option>
+                                    <option value="downtown">Logbessou</option>
+                                    <option value="uptown">Akwa</option>
+                                    <option value="suburbs">Pk 14</option>
+                                    <option value="beachfront">Logpom</option>
+                                </select>
+                                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full md:w-auto px-6 bg-primary text-white rounded font-medium hover:bg-blue-600 transition !rounded-button whitespace-nowrap">
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Housing Listings -->
+        <div>
+            <h2 class="text-xl font-semibold mb-4">Propriétés disponibles</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- Property Card 1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="carousel-container h-48">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20minimalist%20house%20with%20large%20windows%2C%20clean%20lines%2C%20architectural%20photography%2C%20professional%20real%20estate%20photography%2C%20high-end%20property%2C%20natural%20lighting%2C%20contemporary%20design%2C%20neutral%20colors%2C%20spacious%20interior%20visible%20through%20windows&width=400&height=250&seq=1&orientation=landscape"
+                             class="w-full h-full object-cover object-top" alt="Modern House">
+                        <div class="carousel-dots">
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-50 text-primary text-xs font-medium rounded">Appartement</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">A l'entrée IUC</h3>
+                        <p class="text-sm text-gray-500 mt-1">Logbessou, Douala</p>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm text-gray-600">746,76 m<sup>2</sup></span>
+                            <span class="font-semibold text-primary">1,250,000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs text-gray-500">Publié le 8 mai 2025</span>
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded text-sm font-medium !rounded-button whitespace-nowrap">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Property Card 2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="carousel-container h-48">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20urban%20apartment%20building%20with%20glass%20facade%2C%20architectural%20masterpiece%2C%20professional%20real%20estate%20photography%2C%20high-end%20property%2C%20natural%20lighting%2C%20contemporary%20design%2C%20neutral%20colors%2C%20city%20views%20visible%20through%20large%20windows&width=400&height=250&seq=2&orientation=landscape"
+                             class="w-full h-full object-cover object-top" alt="Luxury Apartment">
+                        <div class="carousel-dots">
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                    </div>
+
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-50 text-primary text-xs font-medium rounded">Penthouse</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">À côté d'Akwa Palace</h3>
+                        <p class="text-sm text-gray-500 mt-1">Akwa, Douala</p>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm text-gray-600">563,88 m<sup>2</sup></span>
+                            <span class="font-semibold text-primary">985,000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs text-gray-500">Publié le 10 mai 2025</span>
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded text-sm font-medium !rounded-button whitespace-nowrap">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Property Card 3 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="carousel-container h-48">
+                        <img src="https://readdy.ai/api/search-image?query=contemporary%20suburban%20house%20with%20landscaped%20garden%2C%20architectural%20photography%2C%20professional%20real%20estate%20photography%2C%20high-end%20property%2C%20natural%20lighting%2C%20modern%20family%20home%2C%20neutral%20colors%2C%20welcoming%20entrance%20with%20pathway&width=400&height=250&seq=3&orientation=landscape"
+                             class="w-full h-full object-cover object-top" alt="Suburban House">
+                        <div class="carousel-dots">
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-50 text-primary text-xs font-medium rounded">Maison</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">À côté d'Akwa Palace</h3>
+                        <p class="text-sm text-gray-500 mt-1">Akwa, Douala</p>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm text-gray-600">563,88 m<sup>2</sup></span>
+                            <span class="font-semibold text-primary">985,000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs text-gray-500">Publié le 10 mai 2025</span>
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded text-sm font-medium !rounded-button whitespace-nowrap">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Property Card 4 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="carousel-container h-48">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20townhouse%20with%20rooftop%20terrace%2C%20architectural%20photography%2C%20professional%20real%20estate%20photography%2C%20high-end%20property%2C%20natural%20lighting%2C%20contemporary%20design%2C%20neutral%20colors%2C%20urban%20setting%20with%20greenery&width=400&height=250&seq=4&orientation=landscape"
+                             class="w-full h-full object-cover object-top" alt="Modern Townhouse">
+                        <div class="carousel-dots">
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-50 text-primary text-xs font-medium rounded">Townhouse</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">À côté d'Akwa Palace</h3>
+                        <p class="text-sm text-gray-500 mt-1">Akwa, Douala</p>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm text-gray-600">563,88 m<sup>2</sup></span>
+                            <span class="font-semibold text-primary">985,000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs text-gray-500">Publié le 10 mai 2025</span>
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded text-sm font-medium !rounded-button whitespace-nowrap">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Property Card 5 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="carousel-container h-48">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20waterfront%20villa%20with%20infinity%20pool%2C%20architectural%20photography%2C%20professional%20real%20estate%20photography%2C%20high-end%20property%2C%20natural%20lighting%2C%20contemporary%20design%2C%20neutral%20colors%2C%20ocean%20views%20visible%20from%20property&width=400&height=250&seq=5&orientation=landscape"
+                             class="w-full h-full object-cover object-top" alt="Waterfront Villa">
+                        <div class="carousel-dots">
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-50 text-primary text-xs font-medium rounded">Villa</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">À côté d'Akwa Palace</h3>
+                        <p class="text-sm text-gray-500 mt-1">Akwa, Douala</p>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm text-gray-600">563,88 m<sup>2</sup></span>
+                            <span class="font-semibold text-primary">985,000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs text-gray-500">Publié le 10 mai 2025</span>
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded text-sm font-medium !rounded-button whitespace-nowrap">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Property Card 6 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="carousel-container h-48">
+                        <img src="https://readdy.ai/api/search-image?query=mid-century%20modern%20house%20with%20large%20windows%2C%20architectural%20photography%2C%20professional%20real%20estate%20photography%2C%20high-end%20property%2C%20natural%20lighting%2C%20retro-contemporary%20design%2C%20neutral%20colors%2C%20landscaped%20garden%20visible&width=400&height=250&seq=6&orientation=landscape"
+                             class="w-full h-full object-cover object-top" alt="Mid-Century House">
+                        <div class="carousel-dots">
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-50 text-primary text-xs font-medium rounded">Maison</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">À côté d'Akwa Palace</h3>
+                        <p class="text-sm text-gray-500 mt-1">Akwa, Douala</p>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm text-gray-600">563,88 m<sup>2</sup></span>
+                            <span class="font-semibold text-primary">985,000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs text-gray-500">Publié le 10 mai 2025</span>
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded text-sm font-medium !rounded-button whitespace-nowrap">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-center">
+                <button class="px-5 py-2.5 bg-white border border-gray-200 rounded-lg font-medium text-gray-700 hover:bg-gray-50 !rounded-button whitespace-nowrap">
+                    Charger plus de propriétés
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-white py-4 px-4 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 mb-4 md:mb-0">© 2025 INTER Company. All rights
+                reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">Politique de confidentialité</a>
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">Conditions d'utilisation</a>
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">Politique en matière de cookies</a>
+            </div>
+        </div>
+    </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+// Simulate carousel functionality
+        const dots = document.querySelectorAll('.carousel-dot');
+        dots.forEach(dot => {
+            dot.addEventListener('click', function () {
+                const dotsContainer = this.parentElement;
+                const allDots = dotsContainer.querySelectorAll('.carousel-dot');
+                allDots.forEach(d => d.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
+</body>
+</html>

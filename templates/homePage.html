@@ -1,0 +1,614 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architectural & Construction Showcase</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = {
+        theme: {
+            extend: {
+                colors: {primary: '#3b82f6', secondary: '#10b981'},
+                borderRadius: {
+                    'none': '0px',
+                    'sm': '4px',
+                    DEFAULT: '8px',
+                    'md': '12px',
+                    'lg': '16px',
+                    'xl': '20px',
+                    '2xl': '24px',
+                    '3xl': '32px',
+                    'full': '9999px',
+                    'button': '8px'
+                }
+            }
+        }
+    }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="{% static 'css/homePage.css' %}">
+
+</head>
+<body>
+<header class="bg-gray-900 text-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+        <nav class="hidden md:flex space-x-8">
+            <a href="{% url 'login_register' %}" class="bg-primary text-white px-2 py-2 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors text-lg">Connexion</a>
+        </nav>
+        <div class="md:hidden w-10 h-10 flex items-center justify-center">
+            <i class="ri-menu-line ri-lg"></i>
+        </div>
+    </div>
+</header>
+<main>
+    <!-- Architectural Designs Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold mb-4">Conceptions architecturales</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Découvrez nos concepts architecturaux innovants qui allient esthétique, fonctionnalité et durabilité pour créer des espaces inspirants.</p>
+            </div>
+            <div class="relative">
+                <button class="carousel-nav-button absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="architectural-carousel" data-direction="prev">
+                    <i class="ri-arrow-left-s-line ri-lg"></i>
+                </button>
+                <div id="architectural-carousel" class="carousel flex overflow-x-auto gap-6 py-4 px-2">
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=modern%20minimalist%20house%20design%20with%20clean%20lines%20and%20large%20windows%2C%20architectural%20visualization%20with%20perfect%20lighting%2C%20professional%20photography%20style%2C%20neutral%20color%20palette%20with%20concrete%20and%20wood%20elements%2C%20high-end%20residential%20architecture&width=300&height=400&seq=2&orientation=portrait"
+                                     alt="Modern Minimalist Design" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20building%20with%20green%20roof%20and%20solar%20panels%2C%20architectural%20visualization%20with%20perfect%20lighting%2C%20professional%20photography%20style%2C%20surrounded%20by%20natural%20landscape%2C%20innovative%20green%20architecture%20design&width=300&height=400&seq=3&orientation=portrait"
+                                     alt="Sustainable Architecture" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=luxury%20high-rise%20apartment%20building%20with%20glass%20facade%20and%20balconies%2C%20architectural%20visualization%20with%20perfect%20lighting%2C%20professional%20photography%20style%2C%20urban%20setting%20with%20cityscape%20background%2C%20contemporary%20residential%20tower&width=300&height=400&seq=4&orientation=portrait"
+                                     alt="Urban Residential Tower" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=industrial%20style%20office%20building%20with%20exposed%20brick%20and%20steel%20elements%2C%20architectural%20visualization%20with%20perfect%20lighting%2C%20professional%20photography%20style%2C%20open%20workspace%20concept%2C%20modern%20commercial%20architecture&width=300&height=400&seq=5&orientation=portrait"
+                                     alt="Industrial Office Space" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=futuristic%20cultural%20center%20with%20curved%20organic%20shapes%20and%20innovative%20materials%2C%20architectural%20visualization%20with%20perfect%20lighting%2C%20professional%20photography%20style%2C%20public%20space%20with%20artistic%20elements%2C%20landmark%20building%20design&width=300&height=400&seq=6&orientation=portrait"
+                                     alt="Cultural Center Design" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-button absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="architectural-carousel" data-direction="next">
+                    <i class="ri-arrow-right-s-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mt-8 gap-2">
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="architectural-carousel" data-index="0"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="architectural-carousel" data-index="1"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="architectural-carousel" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Construction Work Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold mb-4">Travaux de construction</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">De la fondation aux finitions, notre expertise en construction donne vie aux visions architecturales avec précision et un savoir-faire de qualité.</p>
+            </div>
+            <div class="relative">
+                <button class="carousel-nav-button absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="construction-carousel" data-direction="prev">
+                    <i class="ri-arrow-left-s-line ri-lg"></i>
+                </button>
+                <div id="construction-carousel" class="carousel flex overflow-x-auto gap-6 py-4 px-2">
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=construction%20site%20with%20workers%20and%20crane%20building%20modern%20structure%2C%20professional%20photography%20with%20natural%20lighting%2C%20safety%20equipment%20visible%2C%20structural%20framework%20being%20assembled%2C%20active%20construction%20environment&width=300&height=400&seq=7&orientation=portrait"
+                                     alt="Active Construction Site" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=concrete%20foundation%20being%20poured%20at%20construction%20site%2C%20professional%20photography%20with%20natural%20lighting%2C%20workers%20using%20equipment%2C%20early%20stage%20building%20construction%2C%20structural%20base%20work&width=300&height=400&seq=8&orientation=portrait"
+                                     alt="Foundation Work" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=interior%20finishing%20work%20with%20craftsmen%20installing%20custom%20woodwork%2C%20professional%20photography%20with%20natural%20lighting%2C%20detailed%20craftsmanship%20visible%2C%20high-end%20materials%2C%20precision%20construction&width=300&height=400&seq=9&orientation=portrait"
+                                     alt="Interior Finishing" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=steel%20framework%20of%20large%20commercial%20building%20under%20construction%2C%20professional%20photography%20with%20natural%20lighting%2C%20workers%20in%20safety%20gear%2C%20structural%20engineering%20visible%2C%20urban%20development%20project&width=300&height=400&seq=10&orientation=portrait"
+                                     alt="Steel Framework" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=facade%20installation%20on%20modern%20building%20with%20workers%20on%20scaffolding%2C%20professional%20photography%20with%20natural%20lighting%2C%20exterior%20cladding%20materials%20visible%2C%20architectural%20detail%20work%2C%20building%20envelope%20construction&width=300&height=400&seq=11&orientation=portrait"
+                                     alt="Facade Installation" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-button absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="construction-carousel" data-direction="next">
+                    <i class="ri-arrow-right-s-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mt-8 gap-2">
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="construction-carousel" data-index="0"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="construction-carousel" data-index="1"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="construction-carousel" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Monitoring and Expertise Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold mb-4">Veille et Expertise</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">ONotre équipe d'experts veille à ce que chaque projet réponde aux normes les plus élevées grâce à une surveillance rigoureuse, un contrôle de qualité et une supervision professionnelle.</p>
+            </div>
+            <div class="relative">
+                <button class="carousel-nav-button absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="monitoring-carousel" data-direction="prev">
+                    <i class="ri-arrow-left-s-line ri-lg"></i>
+                </button>
+                <div id="monitoring-carousel" class="carousel flex overflow-x-auto gap-6 py-4 px-2">
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=professional%20architect%20with%20digital%20tablet%20inspecting%20construction%20site%2C%20wearing%20safety%20helmet%2C%20professional%20photography%20with%20natural%20lighting%2C%20quality%20control%20inspection%2C%20technical%20expertise%20in%20action&width=300&height=400&seq=12&orientation=portrait"
+                                     alt="Site Inspection" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=engineering%20team%20reviewing%20architectural%20blueprints%20and%203D%20models%20in%20modern%20office%2C%20professional%20photography%20with%20natural%20lighting%2C%20technical%20discussion%2C%20project%20planning%20meeting%2C%20collaborative%20expertise&width=300&height=400&seq=13&orientation=portrait"
+                                     alt="Project Planning" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=structural%20engineer%20using%20laser%20measurement%20tools%20on%20construction%20site%2C%20professional%20photography%20with%20natural%20lighting%2C%20precision%20monitoring%20equipment%2C%20technical%20assessment%2C%20quality%20control%20process&width=300&height=400&seq=14&orientation=portrait"
+                                     alt="Structural Assessment" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=drone%20surveying%20construction%20site%20with%20operator%20monitoring%20data%2C%20professional%20photography%20with%20natural%20lighting%2C%20aerial%20monitoring%20technology%2C%20digital%20site%20mapping%2C%20advanced%20construction%20monitoring&width=300&height=400&seq=15&orientation=portrait"
+                                     alt="Drone Monitoring" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=team%20of%20experts%20conducting%20final%20quality%20inspection%20of%20completed%20building%2C%20professional%20photography%20with%20natural%20lighting%2C%20detailed%20assessment%2C%20clipboard%20and%20documentation%2C%20certification%20process&width=300&height=400&seq=16&orientation=portrait"
+                                     alt="Quality Certification" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-button absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="monitoring-carousel" data-direction="next">
+                    <i class="ri-arrow-right-s-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mt-8 gap-2">
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="monitoring-carousel" data-index="0"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="monitoring-carousel" data-index="1"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="monitoring-carousel" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Land Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold mb-4">Opportunités foncières de premier ordre</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Découvrez des terrains exceptionnels dans des emplacements privilégiés, parfaits pour votre prochain projet de développement résidentiel ou commercial.</p>
+            </div>
+            <div class="relative">
+                <button class="carousel-nav-button absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="land-carousel" data-direction="prev">
+                    <i class="ri-arrow-left-s-line ri-lg"></i>
+                </button>
+                <div id="land-carousel" class="carousel flex overflow-x-auto gap-6 py-4 px-2">
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=scenic%20waterfront%20land%20parcel%20with%20mountain%20views%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20undeveloped%20premium%20property%2C%20natural%20landscape%20with%20development%20potential%2C%20exclusive%20location&width=300&height=400&seq=17&orientation=portrait"
+                                     alt="Waterfront Property" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=urban%20development%20land%20in%20city%20center%20with%20skyline%20view%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20cleared%20site%20ready%20for%20construction%2C%20prime%20commercial%20location%2C%20investment%20opportunity&width=300&height=400&seq=18&orientation=portrait"
+                                     alt="Urban Development Site" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=hillside%20land%20parcel%20with%20panoramic%20valley%20views%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20residential%20development%20potential%2C%20exclusive%20neighborhood%20location%2C%20premium%20property&width=300&height=400&seq=19&orientation=portrait"
+                                     alt="Hillside Property" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=suburban%20land%20parcel%20in%20established%20neighborhood%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20cleared%20lot%20ready%20for%20construction%2C%20residential%20development%20opportunity%2C%20community%20setting&width=300&height=400&seq=20&orientation=portrait"
+                                     alt="Suburban Lot" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=coastal%20development%20land%20with%20ocean%20views%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20premium%20beachfront%20property%2C%20exclusive%20location%2C%20investment%20opportunity%20with%20natural%20beauty&width=300&height=400&seq=21&orientation=portrait"
+                                     alt="Coastal Property" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-button absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="land-carousel" data-direction="next">
+                    <i class="ri-arrow-right-s-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mt-8 gap-2">
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="land-carousel" data-index="0"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="land-carousel" data-index="1"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="land-carousel" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Homes Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold mb-4">Maisons d'exception</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Parcourez notre portefeuille de propriétés résidentielles méticuleusement conçues et construites par des experts qui allient luxe, confort et innovation.</p>
+            </div>
+            <div class="relative">
+                <button class="carousel-nav-button absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="homes-carousel" data-direction="prev">
+                    <i class="ri-arrow-left-s-line ri-lg"></i>
+                </button>
+                <div id="homes-carousel" class="carousel flex overflow-x-auto gap-6 py-4 px-2">
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=modern%20luxury%20villa%20with%20infinity%20pool%20and%20glass%20walls%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20architectural%20masterpiece%2C%20high-end%20residential%20property%2C%20exclusive%20home%20design&width=300&height=400&seq=22&orientation=portrait"
+                                     alt="Luxury Villa" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=contemporary%20townhouse%20with%20rooftop%20garden%20in%20urban%20setting%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20modern%20city%20living%2C%20stylish%20residential%20property%2C%20premium%20home%20design&width=300&height=400&seq=23&orientation=portrait"
+                                     alt="Urban Townhouse" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-home%20with%20green%20roof%20and%20solar%20panels%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20environmentally%20friendly%20design%2C%20modern%20sustainable%20living%2C%20innovative%20residential%20property&width=300&height=400&seq=24&orientation=portrait"
+                                     alt="Eco-Friendly Home" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=luxury%20penthouse%20apartment%20with%20panoramic%20city%20views%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20high-end%20interior%20design%2C%20premium%20urban%20living%2C%20exclusive%20residential%20property&width=300&height=400&seq=25&orientation=portrait"
+                                     alt="Luxury Penthouse" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip min-w-[300px] h-[400px] flex-shrink-0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://readdy.ai/api/search-image?query=modern%20family%20home%20with%20spacious%20garden%20and%20contemporary%20architecture%2C%20professional%20real%20estate%20photography%20with%20perfect%20lighting%2C%20premium%20residential%20property%2C%20stylish%20suburban%20living%2C%20exclusive%20neighborhood&width=300&height=400&seq=26&orientation=portrait"
+                                     alt="Family Home" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="card-back">
+                                <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">
+                                    Connexion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-button absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center"
+                        data-carousel="homes-carousel" data-direction="next">
+                    <i class="ri-arrow-right-s-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mt-8 gap-2">
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="homes-carousel" data-index="0"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="homes-carousel" data-index="1"></span>
+                <span class="carousel-indicator h-2 w-6 rounded-full bg-gray-300 cursor-pointer"
+                      data-carousel="homes-carousel" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary bg-opacity-10">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à démarrer votre projet ?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">Contactez notre équipe d'experts dès aujourd'hui pour discuter de vos besoins en architecture et en construction. Nous sommes là pour donner vie à votre vision.</p>
+            <button class="bg-primary text-white px-8 py-4 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors text-lg">
+                Planifier une consultation
+            </button>
+        </div>
+    </section>
+</main>
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h3 class="text-xl font-['Pacifico'] text-primary mb-4">logo</h3>
+                <p class="text-gray-400 mb-6">Transformer les visions architecturales en réalité avec expertise, précision et innovation depuis 2005.</p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                       class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="#"
+                       class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                    <a href="#"
+                       class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="#"
+                       class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Conception architecturale</a>
+                    </li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Construction</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Surveillance de la qualité</a>
+                    </li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Développement immobilier</a>
+                    </li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Consultation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contactez-nous</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                            <i class="ri-map-pin-line"></i>
+                        </div>
+                        <span class="text-gray-400">Logbessou, Douala, Cameroun</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                            <i class="ri-phone-line"></i>
+                        </div>
+                        <span class="text-gray-400">+237 671 970 094</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                        <span class="text-gray-400">info@inter.com</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <span class="text-gray-400">Lun-Ven: 9:00 - 18:00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2025 INTER Company. All rights
+                    reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">Conditions d'utilisation</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">Politique en matière de cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'js/homePage.js' %}"></script>
+</body>
+</html>
