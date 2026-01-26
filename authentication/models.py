@@ -8,7 +8,7 @@ class Profile(AbstractBaseUser):
         ('societe_immo', 'Société immobilière'),
     ]
     user = models.OneToOneField(AbstractBaseUser, on_delete=models.CASCADE)
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES, blank=False, null=False)
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, blank=False, null=True)
     profile_photo = models.ImageField(upload_to="profile_pics",  verbose_name='Photo de profil', default='photo_profil_base.jpg')
     
     def __str__(self):
