@@ -21,6 +21,7 @@ class Business(models.Model):
     business_neighboarhood = models.CharField(max_length=200, blank=False, null=False)
     business_address_description = models.TextField(max_length= 250, blank=True, null=True)
     creation_year = models.IntegerField(max_length=6, blank=False, null=False)
+    is_certified  = models.BooleanField(null= False, blank=True)
 
     # Manager fields
     manager_nom = models.CharField(max_length=150, blank=False, null=False)
